@@ -56,31 +56,40 @@ def start(argv):
 #topsites = open("topsites.txt", "r")
 #urlfoo = topsites.readlines()
 #resultfile = open('results.txt','w')
-with open(sitelists) as f:
-	mylist = f.read().splitlines()
-results = "init"
+
+	with open(sitelists) as f:
+		mylist = f.read().splitlines()
+	results = "init"
 #with open('results.txt', 'w') as resultfile:
-for line in mylist:
-	resultfile = open(filename,'a')
-	bob = 'http://'+line
-	try:
+	for line in mylist:
+		resultfile = open(filename,'a')
+		bob = 'http://'+line
+		try:
 	#bob = 'http://'+line
 	#print "normal one"
 	#res2 = requests.get('http://google.com', timeout=5)
 	#print "normal one worked"
 	#print "list one"
-		res = requests.get(bob, timeout=6,verify=False)
-		results = line + ",PASS,0"
+			res = requests.get(bob, timeout=6,verify=False)
+			results = line + ",PASS,0"
 	#print "Pass!"
-	except requests.exceptions.ReadTimeout as e:
-		results = line + ",FAIL,1"
-	except requests.exceptions.ConnectionError as e:
-		results = line +",FAIL,2"
-	except requests.exceptions.TooManyRedirects as e:
-		results = line +",FAIL,3"
-	except requests.exceptions.ChunkedEncodingError as e:
-		results = line +",FAIL,4"
-	print results
-	resultfile.write(results+"\n")
-	resultfile.close()
-#resultfile.close()
+		except requests.exceptions.ReadTimeout as e:
+			results = line + ",FAIL,1"
+		except requests.exceptions.ConnectionError as e:
+			results = line +",FAIL,2"
+		except requests.exceptions.TooManyRedirects as e:
+			results = line +",FAIL,3"
+		except requests.exceptions.ChunkedEncodingError as e:
+			results = line +",FAIL,4"
+		print results
+		resultfile.write(results+"\n")
+		resultfile.close()
+		sys.exit()
+
+if __name__ == "__main__":
+    try:
+        start(sys.argv[1:])
+    except KeyboardInterrupt:
+        print "Interrupted by user.."
+    except:
+        sys.exit()

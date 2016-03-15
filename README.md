@@ -18,5 +18,5 @@ Example:
 ## Dependencies
 Requests Library [http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)
 ```
-pip install requests
+pip install --upgrade requests
 ```
