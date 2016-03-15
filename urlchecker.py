@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 
-import string
-import httplib
 import sys
 import os
-from socket import *
 import re
 import getopt
 
@@ -16,6 +13,7 @@ except:
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings(InsecurePlatformWarning)
 
 print " -------------------"
 print "| URLchecker v. 0.1 |"

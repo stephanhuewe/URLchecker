@@ -18,5 +18,7 @@ Example:
 ## Dependencies
 Requests Library [http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)
 ```
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
 pip install --upgrade requests
+pip install --upgrade ndg-httpsclient
 ```
