@@ -39,7 +39,7 @@ def start(argv):
 		usage()
 		sys.exit()
 	try:
-		opts, args = getopt.getopt(argv, "s:o")
+		opts, args = getopt.getopt(argv, "s:o:")
 	except getopt.GetoptError:
 		usage()
 		sys.exit()
@@ -86,7 +86,7 @@ def start(argv):
 		print results
 		resultfile.write(results+"\n")
 		resultfile.close()
-		sys.exit()
+	sys.exit()
 
 if __name__ == "__main__":
     try:
