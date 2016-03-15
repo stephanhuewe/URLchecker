@@ -55,8 +55,7 @@ def start(argv):
 		elif opt == '-o':
 			filename = arg
 		else:
-			usage()
-			sys.exit()
+			pass
 
 
 #res = requests.get('http://'+'google.com', timeout=5)
