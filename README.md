@@ -10,6 +10,10 @@ URLchecker is a tool for verifying the functionality of URL filtering.  URLcheck
 
 The repository includes a lsit of the top 1000 websites from alexa to test against.
 
+Example:
+```
+./urlchecker.py -s top-1000-sites.txt -o output.csv
+```
 
 ## Dependencies
 Requests Library [http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)
