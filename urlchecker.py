@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 
+import string
+import httplib
 import sys
 import os
+from socket import *
+import re
 import getopt
 
 try:
@@ -10,6 +14,9 @@ except:
 	print "Request library not found, please install it before proceeding\n"
 	sys.exit()
 
+from discovery import *
+from lib import htmlexport
+from lib import hostchecker
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
