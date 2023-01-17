@@ -8,7 +8,7 @@ import getopt
 try:
 	import requests
 except:
-	print "Request library not found, please install it before proceeding\n"
+	print("Request library not found, please install it before proceeding\n")
 	sys.exit()
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -16,10 +16,10 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 from requests.packages.urllib3.exceptions import InsecurePlatformWarning
 requests.packages.urllib3.disable_warnings(InsecurePlatformWarning)
 
-print " -------------------"
-print "| URLchecker v. 0.1 |"
-print "| By Ben Sooter     |"
-print " -------------------"
+print(" -------------------")
+print("| URLchecker v. 0.1 |")
+print("| By Ben Sooter     |")
+print(" -------------------")
 
 def usage():
 
@@ -28,9 +28,9 @@ def usage():
 	if os.path.dirname(sys.arg[0]) == os.getcwd():
 		comm = "./" + comm
 
-	print "Usage: urlchecker -options \n"
-	print "		-s: List of URLs to test against"
-	print "		-o: Ouput file (CSV)"
+	print("Usage: urlchecker -options \n")
+	print("		-s: List of URLs to test against")
+	print("		-o: Ouput file (CSV)")
 
 
 def start(argv):
@@ -82,7 +82,7 @@ def start(argv):
 			results = line +",FAIL,3"
 		except requests.exceptions.ChunkedEncodingError as e:
 			results = line +",FAIL,4"
-		print results
+		print(results)
 		resultfile.write(results+"\n")
 		resultfile.close()
 	sys.exit()
@@ -91,6 +91,7 @@ if __name__ == "__main__":
     try:
         start(sys.argv[1:])
     except KeyboardInterrupt:
-        print "Interrupted by user.."
+        print("Interrupted by user..")
     except:
         sys.exit()
+
